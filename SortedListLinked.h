@@ -194,21 +194,25 @@ void SortedListLinked<T>::remove(T* item)
 
    //DO THIS
    //removing the top item (check prev)
-   if (         )
+   if (item==1)
    {
-
-
+	NextNode<T>* node = head->getNext();
+    delete head;
+    head = node;
 
 
    }
    else  //general remove
    {
-
-
-
+	NextNode<T>* prev = find(item - 1);
+    NextNode<T>* curr = prev->getNext();
+    NextNode<T>* after = curr->getNext();     
+	prev->setNext(after);
+    delete curr;
 
    }
-
+   // comment
+   
    delete curr;
    sze--;
 }
